@@ -4,7 +4,7 @@ cleanup() {
     echo "Removing routes ..."
     sudo ip route del $VIRTUAL_IP via $IP
 
-    echo "Cleaning up docker images ..."
+    echo "Cleaning up docker containers ..."
     sudo docker rm -f $ID1
     sudo docker rm -f $ID2
     sudo docker rm -f $ID3
@@ -15,7 +15,7 @@ cleanup() {
 
 VIRTUAL_IP=$1
 
-echo "Creating docker images ..."
+echo "Creating docker containers ..."
 
 ID1=$(./nginx/run.sh $VIRTUAL_IP)
 ID2=$(./nginx/run.sh $VIRTUAL_IP)
