@@ -4,13 +4,11 @@ LVS Load balancing with Docker
 ## Build Demo Environment
 
 ```bash
-[docker@docker-root ~]$ sudo modprobe ip_vs
-[docker@docker-root ~]$ wget https://github.com/ailispaw/docker-load-balancer/archive/docker-root.zip
-[docker@docker-root ~]$ unzip docker-root.zip
-[docker@docker-root ~]$ cd docker-load-balancer-docker-root
-[docker@docker-root docker-load-balancer-docker-root]$ docker build -t boynux:nginx nginx
-[docker@docker-root docker-load-balancer-docker-root]$ docker build -t boynux:ipvs ipvs
-[docker@docker-root docker-load-balancer-docker-root]$ ./run.sh 172.20.10.1
+[docker@docker-root ~]$ wget https://github.com/ailispaw/docker-load-balancer/archive/ipvsadm.zip
+[docker@docker-root ~]$ unzip ipvsadm.zip
+[docker@docker-root ~]$ cd docker-load-balancer-ipvsadm
+[docker@docker-root docker-load-balancer-ipvsadm]$ docker build -t boynux:nginx nginx
+[docker@docker-root docker-load-balancer-ipvsadm]$ sudo ./run.sh 172.20.10.1
 Creating docker containers ...
 Adding route ...
 Press ctrl-c to cancel
@@ -21,7 +19,6 @@ Press ctrl-c to cancel
 ```bash
 [docker@docker-root ~]$ docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS               NAMES
-302f7654eab4        boynux:ipvs         "/bin/sh -c /entrypoi"   33 seconds ago      Up 33 seconds                           clever_hodgkin
 ad5176ca4f10        boynux:nginx        "/entrypoint.sh"         34 seconds ago      Up 34 seconds       80/tcp, 443/tcp     evil_morse
 1fad6e3e75cc        boynux:nginx        "/entrypoint.sh"         35 seconds ago      Up 34 seconds       80/tcp, 443/tcp     suspicious_pasteur
 f0e856a23dd9        boynux:nginx        "/entrypoint.sh"         35 seconds ago      Up 35 seconds       80/tcp, 443/tcp     trusting_feynman
