@@ -15,20 +15,20 @@ cleanup() {
 
 VIRTUAL_IP=$1
 
-ipvsadm -A -t $VIRTUAL_IP:80 -s wlc
+ipvsadm -A -t $VIRTUAL_IP:2015 -s wlc
 
 echo "Creating docker containers ..."
 
-ID1=$(./nginx/run.sh $VIRTUAL_IP)
-ID2=$(./nginx/run.sh $VIRTUAL_IP)
-ID3=$(./nginx/run.sh $VIRTUAL_IP)
+ID1=$(./caddy/run.sh $VIRTUAL_IP)
+ID2=$(./caddy/run.sh $VIRTUAL_IP)
+ID3=$(./caddy/run.sh $VIRTUAL_IP)
 
 IP1=$(sudo docker inspect -f '{{.NetworkSettings.IPAddress}}' $ID1)
-ipvsadm -a -t $VIRTUAL_IP:80 -r $IP1 -g
+ipvsadm -a -t $VIRTUAL_IP:2015 -r $IP1:2015 -g
 IP2=$(sudo docker inspect -f '{{.NetworkSettings.IPAddress}}' $ID2)
-ipvsadm -a -t $VIRTUAL_IP:80 -r $IP2 -g
+ipvsadm -a -t $VIRTUAL_IP:2015 -r $IP2:2015 -g
 IP3=$(sudo docker inspect -f '{{.NetworkSettings.IPAddress}}' $ID3)
-ipvsadm -a -t $VIRTUAL_IP:80 -r $IP3 -g
+ipvsadm -a -t $VIRTUAL_IP:2015 -r $IP3:2015 -g
 
 ipvsadm -Ln
 
