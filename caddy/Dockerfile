@@ -1,4 +1,4 @@
-FROM ailispaw/docker-root
+FROM ailispaw/barge
 
 RUN mkdir -p /opt/bin && cd /opt/bin && \
     wget -qO- https://github.com/mholt/caddy/releases/download/v0.8.1/caddy_linux_amd64.tar.gz | \
