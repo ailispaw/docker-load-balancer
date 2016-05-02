@@ -24,7 +24,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 ce3453c476bc        ailispaw/caddy      "/usr/bin/dumb-init /"   11 seconds ago      Up 11 seconds       80/tcp, 443/tcp, 2015/tcp   romantic_morse
 36d42ffc3afa        ailispaw/caddy      "/usr/bin/dumb-init /"   11 seconds ago      Up 11 seconds       80/tcp, 443/tcp, 2015/tcp   clever_brattain
 caa20494cc44        ailispaw/caddy      "/usr/bin/dumb-init /"   11 seconds ago      Up 11 seconds       80/tcp, 443/tcp, 2015/tcp   sharp_bardeen
-[docker@docker-root ~]$ wget -qO- 172.20.10.1:2015
+[docker@docker-root ~]$ wget -qO- 172.20.10.1
 <html>
     <head>
         <title>Host: ce3453c476bc</title>
@@ -33,7 +33,7 @@ caa20494cc44        ailispaw/caddy      "/usr/bin/dumb-init /"   11 seconds ago 
         <p>This host id is: ce3453c476bc
     </body>
 </html>
-[docker@docker-root ~]$ wget -qO- 172.20.10.1:2015
+[docker@docker-root ~]$ wget -qO- 172.20.10.1
 <html>
     <head>
         <title>Host: 36d42ffc3afa</title>
@@ -42,7 +42,7 @@ caa20494cc44        ailispaw/caddy      "/usr/bin/dumb-init /"   11 seconds ago 
         <p>This host id is: 36d42ffc3afa
     </body>
 </html>
-[docker@docker-root ~]$ wget -qO- 172.20.10.1:2015
+[docker@docker-root ~]$ wget -qO- 172.20.10.1
 <html>
     <head>
         <title>Host: caa20494cc44</title>
