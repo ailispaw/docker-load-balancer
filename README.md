@@ -5,7 +5,7 @@ LVS Load balancing with Docker
 
 ```bash
 [bargee@barge ~]$ sudo pkg install ipvsadm
-[bargee@barge ~]$ sudo pkg install criu # to install iproute2
+[bargee@barge ~]$ sudo pkg install iproute2
 [bargee@barge ~]$ wget https://github.com/ailispaw/docker-load-balancer/archive/caddy.zip
 [bargee@barge ~]$ unzip caddy.zip
 [bargee@barge ~]$ cd docker-load-balancer-caddy
