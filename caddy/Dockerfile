@@ -1,9 +1,12 @@
 FROM ailispaw/barge
 
+ENV VERSION=0.9.1 \
+    ARCH=amd64
+
 RUN mkdir -p /opt/bin && cd /opt/bin && \
-    wget -qO- https://github.com/mholt/caddy/releases/download/v0.9.1/caddy_linux_amd64.tar.gz | \
-      tar zx caddy_linux_amd64 && \
-    mv caddy_linux_amd64 caddy
+    wget -qO- https://github.com/mholt/caddy/releases/download/v${VERSION}/caddy_linux_${ARCH}.tar.gz | \
+      tar zx caddy_linux_${ARCH} && \
+    mv caddy_linux_${ARCH} caddy
 
 EXPOSE 80 443 2015
 WORKDIR /var/www/html
