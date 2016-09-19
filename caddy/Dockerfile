@@ -1,7 +1,7 @@
-FROM ailispaw/barge
+FROM ailispaw/barge:armhf
 
 ENV VERSION=0.9.1 \
-    ARCH=amd64
+    ARCH=arm7
 
 RUN mkdir -p /opt/bin && cd /opt/bin && \
     wget -qO- https://github.com/mholt/caddy/releases/download/v${VERSION}/caddy_linux_${ARCH}.tar.gz | \
