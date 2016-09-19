@@ -1,7 +1,7 @@
 FROM ailispaw/barge
 
 RUN mkdir -p /opt/bin && cd /opt/bin && \
-    wget -qO- https://github.com/mholt/caddy/releases/download/v0.8.3/caddy_linux_amd64.tar.gz | \
+    wget -qO- https://github.com/mholt/caddy/releases/download/v0.9.1/caddy_linux_amd64.tar.gz | \
       tar zx caddy_linux_amd64 && \
     mv caddy_linux_amd64 caddy
 
